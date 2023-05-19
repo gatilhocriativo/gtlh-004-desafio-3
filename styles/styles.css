@@ -1,0 +1,90 @@
+/* Colors */
+/* Font sizes */
+@media (max-width: 1080px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: "Epilogue", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #696969;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 1rem 4.5rem;
+}
+header .menu {
+  display: flex;
+  align-items: center;
+  gap: 4.25rem;
+}
+header .menu ul {
+  list-style: none;
+  display: flex;
+  gap: 4.25rem;
+}
+header .menu ul li {
+  cursor: pointer;
+}
+header .menu ul li:hover {
+  color: #141414;
+}
+header .menu ul li a {
+  text-decoration: none;
+  color: #696969;
+}
+header .menu ul li a:hover {
+  color: #141414;
+}
+header .utils {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .utils a {
+  text-decoration: none;
+  color: #696969;
+}
+header .utils a:hover {
+  color: #141414;
+}
+
+/* Components */
+.button {
+  padding: 0.75rem 1.25rem;
+  border: 1.5px solid #696969;
+  color: #696969;
+  border-radius: 0.625rem;
+  background: none;
+  cursor: pointer;
+}
+.button:hover {
+  border-color: #141414;
+  color: #141414;
+}/*# sourceMappingURL=styles.css.map */

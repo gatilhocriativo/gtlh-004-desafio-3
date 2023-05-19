@@ -1,0 +1,107 @@
+/* Colors */
+$white: #fafafa;
+$gray-500: #696969;
+$black: #141414;
+
+/* Font sizes */
+$text-sm: 0.875rem;
+$text-md: 1rem;
+$text-lg: 1.125rem;
+
+html {
+  @media (max-width: 1080px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+}
+
+//Reset css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: "Epilogue", sans-serif;
+}
+
+body {
+  background-color: $white;
+  color: $gray-500;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 1rem 4.5rem;
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 4.25rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 4.25rem;
+
+      li {
+        cursor: pointer;
+        &:hover {
+          color: $black;
+        }
+        a {
+          text-decoration: none;
+          color: $gray-500;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  .utils {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: $gray-500;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}
+
+/* Components */
+
+.button {
+  padding: 0.75rem 1.25rem;
+  border: 1.5px solid $gray-500;
+  color: $gray-500;
+  border-radius: 0.625rem;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $black;
+    color: $black;
+  }
+}
