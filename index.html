@@ -21,9 +21,43 @@
         </div>
 
         <nav>
-          <ul>
-            <li>Features</li>
-            <li>Company</li>
+          <ul class="menu-nav-list">
+            <li class="list-item">
+              <div class="list-item">
+                <span>Features</span>
+                <div class="list-item-icon">
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="Grupo de links"
+                  />
+                </div>
+              </div>
+              <div class="drop-down"></div>
+            </li>
+            <li class="list-item">
+              <div class="list-item-trigger">
+                <span>Company</span>
+                <div class="list-item-icon">
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="Grupo de links"
+                  />
+                </div>
+              </div>
+              <div class="drop-down">
+                <ul class="drop-down-list">
+                  <li>
+                    <a href="#">History</a>
+                  </li>
+                  <li>
+                    <a href="#">Our Team</a>
+                  </li>
+                  <li>
+                    <a href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <li><a href="#">Carrers</a></li>
             <li><a href="#">About</a></li>
           </ul>
@@ -32,13 +66,39 @@
 
       <div class="utils">
         <a href="#">Login</a>
-        <button class="button">Register</button>
+        <button class="button secondary">Register</button>
       </div>
     </header>
 
-    <main></main>
+    <div class="grid-layout">
+      <main class="main-content">
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          crat tam rituals, and watch productivity soar.
+        </p>
+        <a href="#" class="button primary">Learn more</a>
+      </main>
 
-    <footer></footer>
+      <div class="hero-image"></div>
+
+      <footer class="footer">
+        <div class="sponsors">
+          <div>
+            <img src="./images/client-databiz.svg" alt="DataBiz logo" />
+          </div>
+          <div>
+            <img src="./images/client-audiophile.svg" alt="AudioPhile logo" />
+          </div>
+          <div>
+            <img src="./images/client-meet.svg" alt="Meet logo" />
+          </div>
+          <div>
+            <img src="./images/client-maker.svg" alt="Maker logo" />
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="./app/index.js"></script>
   </body>

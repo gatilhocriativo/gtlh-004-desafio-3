@@ -18,7 +18,7 @@ html {
   }
 }
 
-//Reset css
+/* Reset css */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +37,7 @@ body {
   min-height: 100vh;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -52,12 +53,41 @@ header {
     align-items: center;
     gap: 4.25rem;
 
-    ul {
+    ul.menu-nav-list {
       list-style: none;
       display: flex;
       gap: 4.25rem;
 
       li {
+        &.list-item {
+          position: relative;
+        }
+
+        .list-item-trigger {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .drop-down {
+          position: absolute;
+          top: 32px;
+          left: 0;
+          background-color: $white;
+          padding: 1.5rem;
+          box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 25%);
+          border-radius: 0.5rem;
+          min-width: 8.75rem;
+
+          ul.drop-down-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            list-style: none;
+            gap: 0.75rem;
+          }
+        }
+
         cursor: pointer;
         &:hover {
           color: $black;
@@ -90,18 +120,91 @@ header {
   }
 }
 
+.grid-layout {
+  display: grid;
+  width: 100%;
+  max-width: 1780px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem 13.75rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 80px;
+  grid-template-areas:
+    "main-content hero-image"
+    "footer hero-image";
+
+  .main-content {
+    grid-area: main-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.375rem;
+    height: 100%;
+
+    h1 {
+      font-size: 5.125rem;
+      font-weight: 700;
+      color: $black;
+      max-width: 34.125rem;
+    }
+
+    p {
+      line-height: 150%;
+      max-width: 26.25rem;
+    }
+
+    a {
+      padding-top: 1.125rem;
+      padding-bottom: 1.125rem;
+    }
+  }
+
+  .hero-image {
+    grid-area: hero-image;
+    background-image: url("../images/image-hero-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 835px;
+  }
+
+  .footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .sponsors {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+}
+
 /* Components */
 
 .button {
   padding: 0.75rem 1.25rem;
-  border: 1.5px solid $gray-500;
-  color: $gray-500;
   border-radius: 0.625rem;
-  background: none;
   cursor: pointer;
+  text-decoration: none;
 
-  &:hover {
-    border-color: $black;
-    color: $black;
+  &.primary {
+    color: $white;
+    background-color: $black;
+    font-weight: 700;
+    border: 0;
+    font-size: $text-lg;
+  }
+
+  &.secondary {
+    border: 1.5px solid $gray-500;
+    color: $gray-500;
+    background: none;
+
+    &:hover {
+      border-color: $black;
+      color: $black;
+    }
   }
 }

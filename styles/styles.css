@@ -11,6 +11,7 @@
   }
 }
 
+/* Reset css */
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +30,7 @@ body {
   min-height: 100vh;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -44,22 +46,47 @@ header .menu {
   align-items: center;
   gap: 4.25rem;
 }
-header .menu ul {
+header .menu ul.menu-nav-list {
   list-style: none;
   display: flex;
   gap: 4.25rem;
 }
-header .menu ul li {
+header .menu ul.menu-nav-list li {
   cursor: pointer;
 }
-header .menu ul li:hover {
+header .menu ul.menu-nav-list li.list-item {
+  position: relative;
+}
+header .menu ul.menu-nav-list li .list-item-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .menu ul.menu-nav-list li .drop-down {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  background-color: #fafafa;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  min-width: 8.75rem;
+}
+header .menu ul.menu-nav-list li .drop-down ul.drop-down-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  list-style: none;
+  gap: 0.75rem;
+}
+header .menu ul.menu-nav-list li:hover {
   color: #141414;
 }
-header .menu ul li a {
+header .menu ul.menu-nav-list li a {
   text-decoration: none;
   color: #696969;
 }
-header .menu ul li a:hover {
+header .menu ul.menu-nav-list li a:hover {
   color: #141414;
 }
 header .utils {
@@ -75,16 +102,78 @@ header .utils a:hover {
   color: #141414;
 }
 
+.grid-layout {
+  display: grid;
+  width: 100%;
+  max-width: 1780px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem 13.75rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 80px;
+  grid-template-areas: "main-content hero-image" "footer hero-image";
+}
+.grid-layout .main-content {
+  grid-area: main-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.375rem;
+  height: 100%;
+}
+.grid-layout .main-content h1 {
+  font-size: 5.125rem;
+  font-weight: 700;
+  color: #141414;
+  max-width: 34.125rem;
+}
+.grid-layout .main-content p {
+  line-height: 150%;
+  max-width: 26.25rem;
+}
+.grid-layout .main-content a {
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+}
+.grid-layout .hero-image {
+  grid-area: hero-image;
+  background-image: url("../images/image-hero-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 835px;
+}
+.grid-layout .footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.grid-layout .footer .sponsors {
+  display: flex;
+  gap: 2rem;
+}
+
 /* Components */
 .button {
   padding: 0.75rem 1.25rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button.primary {
+  color: #fafafa;
+  background-color: #141414;
+  font-weight: 700;
+  border: 0;
+  font-size: 1.125rem;
+}
+.button.secondary {
   border: 1.5px solid #696969;
   color: #696969;
-  border-radius: 0.625rem;
   background: none;
-  cursor: pointer;
 }
-.button:hover {
+.button.secondary:hover {
   border-color: #141414;
   color: #141414;
 }/*# sourceMappingURL=styles.css.map */
